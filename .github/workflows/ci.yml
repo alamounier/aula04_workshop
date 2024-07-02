@@ -1,22 +1,21 @@
 name: ci
 
-on: push
+on: pull_request
 jobs:
-  test:
-    runs-on: ubuntu-latest
-    strategy:
-      matrix:
-      python-version: [3.9, 3.10, 3.11, 3.12]
+    test:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Baixar o repositório
+              uses: actions/checkout@v4
 
-    steps:
-        - name: Baixar o repositório
-          uses: actions/checkout@v4
-        
-        - name: Instalar o Python
-          uses: actions/setup-python@v5
-          with:
-            python-version: ${{matrix.python-version}}
+            - name: Instalar o Python
+              uses: actions/setup-python@v5
+              with:
+                python-version: ${{ matrix.python-version }}
 
-        - name: qual o diretorio
-          run: echo $(pwd)
+            - name: Instalo as libs
+              run: pip install -r requirements.txt
+
+            - name: rodar minha rotina de testes
+              run: pytest tests/test_contrato.py 
 
