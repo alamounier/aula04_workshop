@@ -4,8 +4,8 @@
 
 1. Clone o repositório:
 ```bash
-git clone https://github.com/alamounier/aula04_workshop.git
-cd dataprojectstarterkit
+git clone git@github.com:alamounier/Excel-Validator.git
+
 ```
 2. Configure a versão correta do Python com `pyenv`:
 ```bash
