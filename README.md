@@ -22,3 +22,10 @@ source .venv/bin/activate
 # Usuários Windows
 pip install -r requirements.txt  
 ```
+4. Execute o projeto:
+```bash
+vá para a pasta do executável:
+cd src/
+execute o projeto:
+python main.py
+```
